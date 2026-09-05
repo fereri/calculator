@@ -1,6 +1,24 @@
-let num1 = prompt("Enter the first number:");
-let operator = prompt("Enter the operator:");
-let num2 = prompt("Enter the second number:")
+let num1;
+let operator;
+let num2;
+
+//access display of calculator
+let display = document.querySelector(".display");
+
+//access all buttons and their values with button.textContent
+let buttons = document.querySelectorAll("button");
+
+//display text in the display of the display class
+let displayText = document.createElement("div");
+displayText.textContent = "900"
+
+//function to get button value
+buttons.forEach(button => {
+    button.addEventListener("click", (element) => {
+        console.log(element.target.textContent);
+    })
+});
+//this needs work
 
 function add(a, b) {
     return a + b;
@@ -35,3 +53,7 @@ function operate(num1, operator,num2) {
 }
 
 console.log(operate(num1,operator,num2));
+
+
+//this section is all for append actions
+display.appendChild(displayText);
